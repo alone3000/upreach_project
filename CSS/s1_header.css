@@ -59,13 +59,14 @@
     }
 }
 
-@media screen and(min-width:992px) and (max-width:1200px) { 
+@media screen and(max-width:1200px) { 
     .outer_header .navLinks{
         background-color: red;
-    width: 70%;
+
+    /* width: 70%;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
     }
    
 }

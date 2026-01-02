@@ -1,6 +1,8 @@
+
+
 function add_section(...args) {
     let section = document.createElement('div');
-    console.log(args, typeof args);
+    // console.log(args, typeof args);
     for(i=0;i<args.length;i++){
     // args.forEach(arg => {
         section.innerHTML += args[i];
@@ -8,6 +10,8 @@ function add_section(...args) {
     }
     document.querySelector('#root').append(section);
 }
+
+
 // dynamic loading of html files in pages
 pages = [['p1',['section1_header.html','hello.html']]];
 
@@ -21,6 +25,3 @@ fetch("../HTML/".concat(pages[0][1][i]))
     .catch(error => console.log("Error:", error));
 }
 
-// import hide from './s1_header.js';
-
-// hide();

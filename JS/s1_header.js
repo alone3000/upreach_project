@@ -1,8 +1,8 @@
-function hide(){
-    document.querySelector(".navLinks")[0].style.display="none";
+ function hide(){
+    console.log( document.querySelector(".navLinks"));
+    // await document.querySelector(".navLinks").style.display = "none";
 }
 
-hide();
 
+export {hide};
 
-// export default hide;
