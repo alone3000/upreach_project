@@ -1,0 +1,20 @@
+/* loading another CSS files */
+@import url("s1_header.css");
+@import url('./fontawesome/fontawesome/css/all.min.css');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html{
+    font-size:31.25%; 
+    /* 10px */
+    /* font-size : 5px; */
+}
+
+/* @import url("s1_header.css"); */
+
