@@ -13,15 +13,20 @@ function add_section(...args) {
 
 
 // dynamic loading of html files in pages
-pages = [['p1',['section1_header.html','hello.html']]];
+let pages = [['p1',['section1_header.html','hello.html']]];
 
+let i;
 for(i=0;i<pages[0][1].length;i++){
 fetch("../HTML/".concat(pages[0][1][i]))
-    .then(response => response.text())
-    .then(data => {
+.then(response => response.text())
+.then(data => {
     //   document.getElementById("section").innerHTML = data;
       add_section(data);
     })
     .catch(error => console.log("Error:", error));
 }
 
+
+import { hide } from '../JS/s1_header.js';
+
+console.log(45);c
