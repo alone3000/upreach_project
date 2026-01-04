@@ -1,0 +1,116 @@
+
+.footer{
+    background-color: var(--primary-color);
+    padding: 5rem 5rem;
+    display: flex;
+    flex-direction: column; 
+    font-size: 4rem;
+    color: var(--secondary-color);
+}
+
+.footer .logo{
+    font-size: 8rem;
+    color: var(--secondary-color);
+    padding-block: 4rem;
+}
+
+.site_links li{
+    list-style: none;
+    color:#ffffff;
+    margin-block: 3rem;
+}
+
+.site_links li a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+li a:hover , .logo:hover{
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+.site_links{
+    display: inline-flex;
+
+}
+
+.site_links ul{
+    padding-inline:1rem;
+}
+
+
+.footer .mid{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.copyright{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 4rem;
+    border-top:1px solid var(--secondary-color);
+    padding-top: 6rem;
+    margin-top:10rem;
+    color: var(--secondary-color);
+}
+
+
+.input_box{
+    margin-block: 2rem;
+}
+
+.input_box input{
+  
+    outline: none;
+    background-color: rgba(122, 120, 120, 0.157);
+    color:var(--secondary-color);
+}
+.input_box input , .btn_subscribe{
+        border: none;
+        padding: 3rem 3rem;
+        border-radius: 3rem;
+        cursor: pointer;
+        font-size:4rem;
+    }
+.subscription p,.btn_subscribe,.input_box input{
+        width: 100%;
+    }
+.btn_subscribe{
+    background-color: var(--button-color);
+  margin-block:2rem;
+}
+   
+.subscription p{
+    margin-block: 3rem;
+    font-size: 4rem;
+   
+}
+@media screen and (min-width:768px){
+    .footer .mid{
+        flex-direction: row;
+    }
+
+
+       
+.subscription p{
+    width: 90rem;
+}
+
+.input_box input{
+    width:60rem;
+}
+
+.btn_subscribe{
+    width:30rem;
+    margin-left:2rem;
+}
+    
+}
+
+@media screen and (min-width:1220px){
+    .footer{
+        padding-inline:calc((100vw - 1200px) / 2);
+    }
+}
