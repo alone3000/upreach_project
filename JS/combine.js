@@ -29,4 +29,4 @@ fetch("../HTML/".concat(pages[0][1][i]))
 
 import { hide } from '../JS/s1_header.js';
 
-console.log(45);c
+console.log(45);c 
