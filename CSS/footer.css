@@ -8,10 +8,15 @@
     color: var(--secondary-color);
 }
 
-.footer .logo{
-    font-size: 8rem;
-    color: var(--secondary-color);
+
+.footer  .logo a{
     padding-block: 4rem;
+    font-size: 8rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .site_links li{
@@ -25,12 +30,14 @@
     color: var(--secondary-color);
 }
 
-li a:hover , .logo:hover{
+li a:hover , .logo a:hover{
     color: #ffffff;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 .site_links{
     display: inline-flex;
+    justify-content: space-between;
 
 }
 
@@ -45,16 +52,7 @@ li a:hover , .logo:hover{
     justify-content: space-between;
 }
 
-.copyright{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    font-size: 4rem;
-    border-top:1px solid var(--secondary-color);
-    padding-top: 6rem;
-    margin-top:10rem;
-    color: var(--secondary-color);
-}
+
 
 
 .input_box{
@@ -87,6 +85,18 @@ li a:hover , .logo:hover{
     font-size: 4rem;
    
 }
+
+.copyright{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 4rem;
+    border-top:1px solid var(--secondary-color);
+    padding-top: 6rem;
+    margin-top:10rem;
+    color: var(--secondary-color);
+}
+
 @media screen and (min-width:768px){
     .footer .mid{
         flex-direction: row;
@@ -105,6 +115,11 @@ li a:hover , .logo:hover{
 .btn_subscribe{
     width:30rem;
     margin-left:2rem;
+}
+
+.copyright{
+     flex-direction: row;
+    justify-content: space-between;
 }
     
 }

@@ -1,137 +1,85 @@
 
+let path = window.location.pathname;
+let route = path.split('/');
+route = route[route.length - 1];
+    // console.log(path.split('/'),typeof(path.split('/')));
 
-function add_section(...args) {
+function add_section(comp,page,...args) {
     let section = document.createElement('div');
     // console.log(args, typeof args);
-    for(i=0;i<args.length;i++){
-    // args.forEach(arg => {
-        section.innerHTML += args[i];
-        console.log(args[i]);
-    }
+    section.innerHTML += comp;
     document.querySelector('#root').append(section);
 }
 
 
 // dynamic loading of html files in pages
 let pages = [
-                [
-                    'p1',
+                {
+                    'layout.html':
                         [
                             'section1_header.html',
                             's2_hero.html',
-                            's3.html',
-                            's4.html',
-                            's5.html',
-                            's6.html',
-                            's7.html',
-                            's8.html',
-                            's9.html',
-                            's10.html',
                             's11.html',
                             'section12_footer.html'
                         ]
-                ],
-                [
-                    'p2',
+                },
+                {
+                    'about.html':
                     [
                         'section1_header.html',
-                        's2_hero.html',
-                        's3.html',
-                        's4.html',
-                        's5.html',
-                        's6.html',
-                        's7.html',
-                        's8.html',
-                        's9.html',
-                        's10.html',
-                        's11.html',
+                        
                         'section12_footer.html'
                     ]
-                ],
-                [
-                    'p3',
-                    [
-                        'section1_header.html',
-                        's2_hero.html',
-                        's3.html',
-                        's4.html',
-                        's5.html',
-                        's6.html',
-                        's7.html',
-                        's8.html',
-                        's9.html',
-                        's10.html',
-                        's11.html',
-                        'section12_footer.html'
-                    ]
-                ],
-                [
-                    'p4',
-                    [
-                        'section1_header.html',
-                        's2_hero.html',
-                        's3.html',
-                        's4.html',
-                        's5.html',
-                        's6.html',
-                        's7.html',
-                        's8.html',
-                        's9.html',
-                        's10.html',
-                        's11.html',
-                        'section12_footer.html'
-                    ]
-                ],
-                [
-                    'p5',
-                    [
-                        'section1_header.html',
-                        's2_hero.html',
-                        's3.html',
-                        's4.html',
-                        's5.html',
-                        's6.html',
-                        's7.html',
-                        's8.html',
-                        's9.html',
-                        's10.html',
-                        's11.html',
-                        'section12_footer.html'
-                    ]
-                ],
-                [
-                    'p6',
-                    [
-                        'section1_header.html',
-                        's2_hero.html',
-                        's3.html',
-                        's4.html',
-                        's5.html',
-                        's6.html',
-                        's7.html',
-                        's8.html',
-                        's9.html',
-                        's10.html',
-                        's11.html',
-                        'section12_footer.html'
-                    ]
-                ]
+                }
             ];
 
 
-let i;
-for(i=0;i<pages[0][1].length;i++){
-fetch("../HTML/".concat(pages[0][1][i]))
-.then(response => response.text())
+// let i,j,k;
+// for(i=0;i<pages.length;i++){
+// for(j=0;j<pages[i].length;j++){
+// for(k=0;k<pages[0]['layout.html'].length;k++){
+
+//     console.log(route);
+// if(route == pages[i][0]){
+function render_page(component){
+fetch("../HTML/".concat(component))
+// fetch("../HTML/".concat(pages['layout.html'][k]))
+.then(x => x.text())
 .then(data => {
     //   document.getElementById("section").innerHTML = data;
       add_section(data);
     })
     .catch(error => console.log("Error:", error));
 }
+// }
+// }
+// }
+// }
+
+
+
+
+pages.forEach((page)=>{
+    let key = Object.keys(page);
+    if(key[0] == route){
+        for(let i=0;i<page[key[0]].length;i++){
+            console.table(page[key[0]].length,typeof page[key[0]],route,typeof route);
+            render_page(page[key[0]][i]);
+            console.log(page[key[0]][i]);
+        }
+    }
+})
 
 
 
 import { togglemenu } from '../JS/s1_header.js';
 // scope issue when direct call in HTML because of `module type`
 togglemenu();
+
+
+// .js 
+// .cjs 
+// .mjs 
+// .jsx 
+// .ts 
+// .tsx

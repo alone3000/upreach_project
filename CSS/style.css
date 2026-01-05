@@ -4,6 +4,11 @@
 /* @import url('./fontawesome/fontawesome/css/all.min.css'); */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
 
+@font-face {
+    font-family: santoshi;
+    src: url('../assets/Satoshi_Complete/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf');
+}
+
 
 :root{
     --primary-color:#002329;
@@ -17,17 +22,17 @@
 }
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-}
-
 html{
     font-size:31.25%; 
     /* 10px */
     /* font-size : 5px; */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: santoshi;
 }
 
 /* @import url("s1_header.css"); */
