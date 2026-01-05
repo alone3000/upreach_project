@@ -1,6 +1,20 @@
 /* loading another CSS files */
-@import url("s1_header.css");
-@import url('./fontawesome/fontawesome/css/all.min.css');
+@import url("header.css");
+@import url("footer.css");
+/* @import url('./fontawesome/fontawesome/css/all.min.css'); */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+
+:root{
+    --primary-color:#002329;
+    --secondary-color:#fafafab5;
+    --button-color:#50c878;
+    --hover-button-color:#3da66d;
+    --laptop-width: 992px;
+    --tablet-width: 768px;
+    --mobile-width: 576px;
+
+}
 
 
 *{

@@ -1,0 +1,123 @@
+
+
+.outer_header{
+   position: sticky;
+    top:16.5rem;
+    left: 0rem;
+    width: 100dvw;
+    height: 16.5rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 5rem 10rem;
+    background-color: var(--primary-color);
+}
+
+.outer_header  .logo{
+    font-size: 8rem;
+    color: var(--secondary-color);
+}
+
+.outer_header .menu{
+    font-size: 6rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+.navLinks_active{
+    display: inline-flex !important;
+}
+
+.outer_header .navLinks{
+    position: absolute;
+    left: 0rem;
+    top:14rem;
+    padding: 5rem;
+    background-color: var(--primary-color);
+    min-height: min-content;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.outer_header .navLinks li{
+    list-style: none;
+    width: 100vw;
+    text-align: center;
+    margin-block: 5rem;
+    font-size: 6rem;
+}
+.outer_header .navLinks li a{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.navLinks li a:hover , .logo:hover{
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+.outer_header .btn{
+    background-color: var(--button-color);
+    border: none;
+    padding: 2rem 4rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    font-size:8rem;
+}
+.outer_header .btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.external-icon {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+
+
+@media  screen and (max-width:992px) {
+
+
+    .outer_header .navLinks{
+        display: none;
+    }
+}
+
+@media screen and (min-width:992px) { 
+  
+.outer_header{
+    display: flex;
+    flex-direction: row;
+}
+   
+.outer_header .navLinks{
+    position: static;
+    padding: 0rem;
+    display: contents;
+
+}
+
+.outer_header .navLinks li{
+    position: normal;
+    display: inline-block;
+    width: auto;
+    margin-inline: 2rem;
+    font-size: 4.5rem;
+}
+    
+.outer_header .btn{
+    font-size:6rem;}
+
+    .outer_header .menu{
+        display: none;
+    }
+   
+}
+
+@media screen and (min-width:1220px){
+    .outer_header{
+        padding-inline:calc((100vw - 1200px) / 2);
+    }
+}
