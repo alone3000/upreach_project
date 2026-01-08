@@ -1,6 +1,7 @@
 /* loading another CSS files */
 @import url("header.css");
 @import url("footer.css");
+@import url("herosection.css");
 /* @import url('./fontawesome/fontawesome/css/all.min.css'); */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
 
@@ -24,7 +25,7 @@
 
 html{
     font-size:31.25%; 
-    /* 10px */
+    /* 5px */
     /* font-size : 5px; */
 }
 
