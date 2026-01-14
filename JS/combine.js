@@ -4,11 +4,11 @@ let route = path.split('/');
 route = route[route.length - 1];
     // console.log(path.split('/'),typeof(path.split('/')));
 
-function add_section(comp,page,...args) {
-    let section = document.createElement('div');
-    // console.log(args, typeof args);
-    section.innerHTML += comp;
-    document.querySelector('#root').append(section);
+async function add_section(comp) {
+    // let section = document.createElement('div');
+    // console.log(comp, typeof comp);
+    // section.innerHTML += await comp;
+    document.querySelector('#root').innerHTML += await comp;
 }
 
 
@@ -19,7 +19,7 @@ let pages = [
                         [
                             'section1_header.html',
                             's2_hero.html',
-                            's11.html',
+                
                             'section12_footer.html'
                         ]
                 },
@@ -27,48 +27,36 @@ let pages = [
                     'about.html':
                     [
                         'section1_header.html',
-                        
+                        's11_brand.html',
+                        's3_para.html',
                         'section12_footer.html'
                     ]
                 }
             ];
 
 
-// let i,j,k;
-// for(i=0;i<pages.length;i++){
-// for(j=0;j<pages[i].length;j++){
-// for(k=0;k<pages[0]['layout.html'].length;k++){
-
-//     console.log(route);
-// if(route == pages[i][0]){
-function render_page(component){
-fetch("../HTML/".concat(component))
-// fetch("../HTML/".concat(pages['layout.html'][k]))
-.then(x => x.text())
-.then(data => {
-    //   document.getElementById("section").innerHTML = data;
-      add_section(data);
-    })
-    .catch(error => console.log("Error:", error));
+async function render_page(component){
+    try{
+        let fetchPromise = await fetch("../HTML/".concat(component));
+        let data = await fetchPromise.text();
+        console.log("Fetched data:", data);
+        add_section(data);
+    } catch (error) {
+        console.log("Error:", error);
+    }
 }
-// }
-// }
-// }
-// }
 
 
-
-
-pages.forEach((page)=>{
-    let key = Object.keys(page);
-    if(key[0] == route){
-        for(let i=0;i<page[key[0]].length;i++){
-            console.table(page[key[0]].length,typeof page[key[0]],route,typeof route);
-            render_page(page[key[0]][i]);
-            console.log(page[key[0]][i]);
+for (let i = 0; i < pages.length; i++) {
+    let key = Object.keys(pages[i]);
+    if (key[0] === route) {
+        for (let j = 0; j < pages[i][key[0]].length; j++) {
+            console.table(pages[i][key[0]].length, typeof pages[i][key[0]], route, typeof route);
+            render_page(pages[i][key[0]][j]);
+            console.log(pages[i][key[0]][j]);
         }
     }
-})
+}
 
 
 
@@ -83,3 +71,5 @@ togglemenu();
 // .jsx 
 // .ts 
 // .tsx
+
+

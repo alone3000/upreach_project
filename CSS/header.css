@@ -1,9 +1,11 @@
 
 
 .outer_header{
-   position: fixed;
-    top: 0rem;
-    left: 0rem;
+    /* sticky only work with itself parent */
+   position: sticky;
+    top: 0;
+    z-index: 1000;
+
     width: 100dvw;
     height: 16.5rem;
     display: flex;

@@ -38,3 +38,15 @@ html{
 
 /* @import url("s1_header.css"); */
 
+
+.btn{
+    border: none;
+    padding: 2rem 4rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    font-size:4rem;
+}
+.btn a{
+    text-decoration: none;
+    color: black;
+}
