@@ -39,6 +39,7 @@
     top:14rem;
     padding: 5rem;
     background-color: var(--primary-color);
+    width: 100dvw;
     min-height: min-content;
     display: inline-flex;
     flex-direction: column;

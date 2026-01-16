@@ -1,8 +1,8 @@
 .hero-section{
     background-color: var(--primary-color);
-    height: calc(100dvh - 17rem);
+    /* height: calc(100dvh - 17rem); */
     width: 100dvw;
-    padding-inline:5%;
+    padding-inline:10rem;
     /* margin-top: 16.5rem; */
 }
 
@@ -14,19 +14,25 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position:top center;
+    border-radius: 4rem;
+}
+
+.emoji , .gcard{
+    position:absolute;
 }
 
 .hero1,.hero2{
    display: flex;
    flex-direction: column;
    align-items: center;
+   text-align: center;
    justify-content: center;
 }
 .hero1  p:first-child{
-    font-size:12rem;
+    font-size:8rem;
     color: #ffffff;
-    font-weight: 700;
-    line-height: 12rem;
+    font-weight: 400;
+    line-height: 8rem;
 
 }
 
@@ -38,6 +44,12 @@
     font-weight: 400;
     line-height: 5rem;
 
+}
+
+.hero1 .btns{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 @media screen and (min-width:992px) {
