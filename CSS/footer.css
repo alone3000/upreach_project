@@ -124,9 +124,3 @@ li a:hover , .logo a:hover{
 }
     
 }
-
-@media screen and (min-width:1220px){
-    .footer{
-        padding-inline:calc((100vw - 1200px) / 2);
-    }
-}

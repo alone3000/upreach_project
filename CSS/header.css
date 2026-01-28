@@ -122,9 +122,3 @@
     }
    
 }
-
-@media screen and (min-width:1220px){
-    .outer_header{
-        padding-inline:calc((100vw - 1200px) / 2);
-    }
-}
