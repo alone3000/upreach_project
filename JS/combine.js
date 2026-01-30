@@ -1,4 +1,5 @@
 
+
 let path = window.location.pathname;
 let route = path.split('/');
 route = route[route.length - 1];
@@ -39,7 +40,7 @@ async function render_page(component){
     try{
         let fetchPromise = await fetch("../HTML/".concat(component));
         let data = await fetchPromise.text();
-        console.log("Fetched data:", data);
+        // console.log("Fetched data:", data);
         add_section(data);
     } catch (error) {
         console.log("Error:", error);
@@ -51,9 +52,9 @@ for (let i = 0; i < pages.length; i++) {
     let key = Object.keys(pages[i]);
     if (key[0] === route) {
         for (let j = 0; j < pages[i][key[0]].length; j++) {
-            console.table(pages[i][key[0]].length, typeof pages[i][key[0]], route, typeof route);
+            // console.table(pages[i][key[0]].length, typeof pages[i][key[0]], route, typeof route);
             render_page(pages[i][key[0]][j]);
-            console.log(pages[i][key[0]][j]);
+            // console.log(pages[i][key[0]][j]);
         }
     }
 }
@@ -63,6 +64,13 @@ for (let i = 0; i < pages.length; i++) {
 import { togglemenu } from '../JS/s1_header.js';
 // scope issue when direct call in HTML because of `module type`
 togglemenu();
+
+
+import {preloadScript} from './preloading.js';
+
+// // console.log(preloadScript)
+preloadScript();
+
 
 
 // .js 
